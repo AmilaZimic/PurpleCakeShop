@@ -1,0 +1,315 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cake.shop.sa.Fragments.ReservationFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDark"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/reservation_title"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="@string/reservation_txt1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_selector1"/>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_name"
+                android:layout_below="@+id/reservation_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/reservation_txt2"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reservation_etxt1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_lastname"
+                android:layout_below="@+id/reservation_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/reservation_txt3"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reservation_etxt2"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_email"
+                android:layout_below="@+id/reservation_lastname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/reservation_txt4"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reservation_etxt3"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/reservation_phone"
+            android:layout_below="@+id/reservation_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@drawable/button_selector1"
+            android:weightSum="1" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:text="@string/reservation_txt5"
+                android:textColor="@color/colorPrimaryDark"  />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_etxt4"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edittext_rounded"
+                android:textColor="#000000"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:padding="5dp"
+                android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_date"
+                android:layout_below="@+id/reservation_phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/reservation_txt6"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reservation_etxt6"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_time"
+                android:layout_below="@+id/reservation_date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/reservation_txt7"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reservation_etxt7"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_location"
+                android:layout_below="@+id/reservation_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/reservation_txt8"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/spinner1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:layout_weight=".75"
+                    android:spinnerMode="dropdown"
+                    android:overlapAnchor="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/reservation_seats"
+                android:layout_below="@+id/reservation_location"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/reservation_txt9"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/spinner2"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edittext_rounded"
+                    android:textColor="#000000"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:layout_weight=".75"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/reservation_done"
+                android:layout_below="@+id/reservation_seats"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="@string/reservationbutton"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_selector1"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

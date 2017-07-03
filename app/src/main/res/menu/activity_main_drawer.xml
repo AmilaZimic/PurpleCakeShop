@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_shops"
+            android:icon="@drawable/ic_my_location"
+            android:title="Shops" />
+    </group>
+
+    <item android:title="Like the Cake Shop?">
+        <menu>
+            <item
+                android:id="@+id/nav_reservation"
+                android:icon="@drawable/ic_reservation"
+                android:title="Make Reservation" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_rate"
+                android:title="Rate Us" />
+        </menu>
+    </item>
+
+</menu>

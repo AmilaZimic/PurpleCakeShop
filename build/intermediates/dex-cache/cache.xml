@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/Amila/AndroidStudioProjects/CakeShop/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/Amila/AndroidStudioProjects/CakeShop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0ce0dc32b8bbe12196607f2ef537752f0d53689e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amila/AndroidStudioProjects/CakeShop/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f2d728899050a5ea77a94cf08a9f6ece2e65b6b3">
+        <dex dex="/Users/Amila/AndroidStudioProjects/CakeShop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_88c984100f9be5739a617bf1d43b69c5a80a6a50/classes.dex" />
+    </item>
+
+</items>
