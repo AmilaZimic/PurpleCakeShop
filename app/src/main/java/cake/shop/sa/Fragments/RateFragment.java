@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import cake.shop.sa.R;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -21,21 +24,28 @@ public class RateFragment extends Fragment {
 
     private Button rate;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     public RateFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View rootView =inflater.inflate(R.layout.fragment_rate, container, false);
         final RatingBar mBar = (RatingBar) rootView.findViewById(R.id.ratingBar);
         rate = (Button) rootView.findViewById(R.id.rate);
+
         rate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 float rate=mBar.getRating();
                 Toast toast = Toast.makeText(getActivity(), "Your rate is "+rate,LENGTH_LONG);
                 toast.show();
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference databaseReference = database.getReference();
+                databaseReference.child("AppRating").push().setValue(rate);
             }
         });
 

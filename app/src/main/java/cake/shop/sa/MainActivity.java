@@ -2,12 +2,8 @@ package cake.shop.sa;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +15,7 @@ import android.view.MenuItem;
 
 import cake.shop.sa.Fragments.AboutFragment;
 import cake.shop.sa.Fragments.HomeFragment;
+import cake.shop.sa.Fragments.ProfileFragment;
 import cake.shop.sa.Fragments.RateFragment;
 import cake.shop.sa.Fragments.ReservationFragment;
 import cake.shop.sa.Fragments.ShopsFragment;
@@ -26,6 +23,7 @@ import cake.shop.sa.Fragments.ShopsFragment;
 public class MainActivity extends AppCompatActivity
 
         implements NavigationView.OnNavigationItemSelectedListener,
+        ProfileFragment.OnFragmentInteractionListener,
         HomeFragment.OnFragmentInteractionListener,
         AboutFragment.OnFragmentInteractionListener,
         ShopsFragment.OnFragmentInteractionListener,
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity
         RateFragment.OnFragmentInteractionListener
 
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +54,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -132,6 +130,12 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, rateFragment);
             fragmentTransaction.commit();
 
+        }  else if (id == R.id.nav_profile) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            ProfileFragment profileFragment = new ProfileFragment();
+            fragmentTransaction.replace(R.id.fragment_container, profileFragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
