@@ -1,16 +1,194 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#0288D1"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Fragments.WeddingTwoFragment" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment Two"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:textColor="#fff"
-        android:layout_centerInParent="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/wedding1"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wedding_txt1"
+                    android:textSize="15sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="20dp" />
+
+                <Button
+                    android:id="@+id/w_order1"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:text="@string/order"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selector1"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/wedding2"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wedding_txt2"
+                    android:textSize="15sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="20dp" />
+
+                <Button
+                    android:id="@+id/w_order2"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/order"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selector1"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/wedding3"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wedding_txt3"
+                    android:textSize="15sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="20dp"/>
+
+                <Button
+                    android:id="@+id/w_order3"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/order"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selector1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/wedding4"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wedding_txt4"
+                    android:textSize="15sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="20dp"/>
+
+                <Button
+                    android:id="@+id/w_order4"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/order"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selector1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/wedding5"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wedding_txt5"
+                    android:textSize="15sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:paddingLeft="20dp"/>
+
+                <Button
+                    android:id="@+id/w_order5"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/order"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selector1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

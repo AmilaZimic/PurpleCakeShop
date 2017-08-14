@@ -69,19 +69,6 @@ tools:context="cake.shop.sa.Activities.SignupActivity">
         android:textSize="15dp"
         android:textStyle="bold"/>
 
-    <!-- Link to Reset Password Screen -->
-
-    <Button
-        android:id="@+id/btn_reset_password"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dip"
-        android:background="@null"
-        android:text="@string/btn_forgot_password"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"/>
-
     <!-- Link to Signin Screen -->
 
     <Button

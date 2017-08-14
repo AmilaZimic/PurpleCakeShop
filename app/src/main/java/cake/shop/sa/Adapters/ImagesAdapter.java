@@ -34,8 +34,7 @@ public  class ImagesAdapter extends RecyclerView.Adapter<ImagesViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(view.getContext(), "Hello", Toast.LENGTH_SHORT).show();
-                //Open New Activity show details about advertisment
+
                 Intent intent = new Intent(view.getContext(), ImagesDetails.class);
                 intent.putExtra("ad",image);
 

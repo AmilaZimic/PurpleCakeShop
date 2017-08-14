@@ -14,28 +14,29 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".Activities.SignupActivity"
+            android:name=".Activities.SplashScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Activities.AnniversaryActivity" />
         <activity android:name=".Activities.BirthdayActivity" />
         <activity android:name=".Activities.CorporateActivity" />
         <activity android:name=".Activities.CupcakesActivity" />
         <activity android:name=".Activities.SpecialActivity" />
         <activity android:name=".Activities.WeddingActivity" />
-        <activity android:name=".Activities.SigninActivity"/>
+        <activity android:name=".Activities.SigninActivity" />
+        <activity android:name=".Activities.SignupActivity" />
         <activity android:name=".Activities.ResetPasswordActivity" />
-        <activity android:name=".Activities.SaveData" />
+        <activity android:name=".Activities.OrderActivity" />
         <activity android:name=".Adapters.ImagesDetails" />
         <activity android:name=".MainActivity" />
-
     </application>
 
 </manifest>

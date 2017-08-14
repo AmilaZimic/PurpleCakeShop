@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +19,15 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,14 +36,13 @@ import java.util.List;
 import java.util.Locale;
 
 import cake.shop.sa.Adapters.CustomAdapter;
+import cake.shop.sa.Adapters.CustomerReservation;
 import cake.shop.sa.Adapters.RowItemAdapter;
 import cake.shop.sa.R;
 
 import static android.widget.Toast.LENGTH_LONG;
 
 public class ReservationFragment extends DialogFragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
-
-    private ReservationFragment.OnFragmentInteractionListener mListener;
 
     public static final String[] seats = new String[] {
             "Two seats",
@@ -92,6 +100,18 @@ public class ReservationFragment extends DialogFragment implements AdapterView.O
 
     private Button reservation_done;
 
+    private ReservationFragment.OnFragmentInteractionListener mListener;
+
+    private static final String TAG = ReservationFragment.class.getSimpleName();
+    private TextView txtDetails;
+    private EditText inputName, inputLastname, inputEmail, inputPhone, inputDate, inputTime;
+    private Spinner inputLocation, inputSeats;
+    private Button btnSave;
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+
+    private String customerId;
+
     public ReservationFragment() {
 
     }
@@ -138,7 +158,7 @@ public class ReservationFragment extends DialogFragment implements AdapterView.O
         fromDateEtxt.setInputType(InputType.TYPE_NULL);
         fromDateEtxt.requestFocus();
 
-        timeFormatter = new SimpleDateFormat("hh:mm", Locale.US);
+        timeFormatter = new SimpleDateFormat("HH:mm", Locale.US);
         fromTimeEtxt = (EditText) v.findViewById(R.id.reservation_etxt7);
         fromTimeEtxt.setInputType(InputType.TYPE_NULL);
         fromTimeEtxt.requestFocus();
@@ -170,9 +190,144 @@ public class ReservationFragment extends DialogFragment implements AdapterView.O
             }
         });
 
+        txtDetails = (TextView) v.findViewById(R.id.txt_customer);
+        inputName = (EditText) v.findViewById(R.id.reservation_etxt1);
+        inputLastname = (EditText) v.findViewById(R.id.reservation_etxt2);
+        inputEmail = (EditText) v.findViewById(R.id.reservation_etxt3);
+        inputPhone = (EditText) v.findViewById(R.id.reservation_etxt4);
+        inputDate = (EditText) v.findViewById(R.id.reservation_etxt6);
+        inputTime = (EditText) v.findViewById(R.id.reservation_etxt7);
+        inputLocation = (Spinner) v.findViewById(R.id.spinner1);
+        inputSeats = (Spinner) v.findViewById(R.id.spinner2);
+
+        btnSave = (Button) v.findViewById(R.id.reservation_done);
+
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+
+        // get reference to 'CustomerReseravtion' node
+        mFirebaseDatabase = mFirebaseInstance.getReference("CustomerReseravtion");
+
+        // Save / update the user
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = inputName.getText().toString();
+                String lastname = inputLastname.getText().toString();
+                String email = inputEmail.getText().toString();
+                String phone = inputPhone.getText().toString();
+                String date = inputDate.getText().toString();
+                String time = inputTime.getText().toString();
+                String location = inputLocation.getSelectedItem().toString();
+                String seats = inputSeats.getSelectedItem().toString();
+
+                // Check for already existed customerId
+                if (TextUtils.isEmpty(customerId)) {
+                    createUser(name, lastname, email, phone, date, time, location, seats);
+                } else {
+                    updateUser(name, lastname, email, phone, date, time, location, seats);
+                }
+            }
+        });
+
+        toggleButton();
+
         return v;
     }
 
+    /* Changing button text */
+    private void toggleButton() {
+        if (TextUtils.isEmpty(customerId)) {
+            btnSave.setText("Done");
+        } else {
+            btnSave.setText("Update");
+        }
+    }
+
+    /* Creating new customer node under 'customers' */
+    private void createUser(String name, String lastname, String email, String phone, String date, String time, String location, String seats) {
+        // TODO
+        // In real apps this userId should be fetched
+        // by implementing firebase auth
+        if (TextUtils.isEmpty(customerId)) {
+            customerId = mFirebaseDatabase.push().getKey();
+        }
+
+        CustomerReservation customer = new CustomerReservation(name, lastname, email, phone, date, time, location, seats);
+
+        mFirebaseDatabase.child(customerId).setValue(customer);
+
+        addCustomerChangeListener();
+    }
+
+    /* Customer data change listener */
+    private void addCustomerChangeListener() {
+        // User data change listener
+        mFirebaseDatabase.child(customerId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                CustomerReservation customer = dataSnapshot.getValue(CustomerReservation.class);
+
+                /* Check for null */
+                if (customer == null) {
+                    Log.e(TAG, "Customer data is null!");
+                    return;
+                }
+
+                Log.e(TAG, "Customer data is changed!" + customer.name + ", " + customer.lastname + ", " + customer.email + ", "
+                        + customer.phone + ", " + customer.date + ", " + customer.time + ", " + customer.location + ", " + customer.seats);
+
+                /* Display newly updated name and email */
+                txtDetails.setText(customer.name + ", " + customer.lastname + ", " + customer.email + ", "
+                        + customer.phone + ", " + customer.date + ", " + customer.time + ", " + customer.location + ", " + customer.seats);
+
+                /* Clear edit text */
+                inputName.setText("");
+                inputLastname.setText("");
+                inputEmail.setText("");
+                inputPhone.setText("");
+                inputDate.setText("");
+                inputTime.setText("");
+
+                toggleButton();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                /* Failed to read value */
+                Log.e(TAG, "Failed to read customer.", error.toException());
+            }
+        });
+    }
+
+    /* Update user */
+    private void updateUser(String name, String lastname, String email, String phone, String date, String time, String location, String seats) {
+        /* Updating the user via child nodes */
+        if (!TextUtils.isEmpty(name))
+            mFirebaseDatabase.child(customerId).child("name").setValue(name);
+
+        if (!TextUtils.isEmpty(lastname))
+            mFirebaseDatabase.child(customerId).child("lastname").setValue(lastname);
+
+        if (!TextUtils.isEmpty(email))
+            mFirebaseDatabase.child(customerId).child("email").setValue(email);
+
+        if (!TextUtils.isEmpty(phone))
+            mFirebaseDatabase.child(customerId).child("phone").setValue(phone);
+
+        if (!TextUtils.isEmpty(date))
+            mFirebaseDatabase.child(customerId).child("date").setValue(date);
+
+        if (!TextUtils.isEmpty(time))
+            mFirebaseDatabase.child(customerId).child("time").setValue(time);
+
+        if (!TextUtils.isEmpty(location))
+            mFirebaseDatabase.child(customerId).child("location").setValue(location);
+
+        if (!TextUtils.isEmpty(seats))
+            mFirebaseDatabase.child(customerId).child("seats").setValue(seats);
+    }
+
+    /* Set Date */
     private void setDateField() {
 
         fromDateEtxt.setOnClickListener(this);
@@ -194,6 +349,7 @@ public class ReservationFragment extends DialogFragment implements AdapterView.O
         },newCalendar.get(Calendar.YEAR), newCalendar.get(java.util.Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
 
+    /* Set Time */
     private void setTimeField(){
 
         fromTimeEtxt.setOnClickListener(this);
@@ -209,6 +365,7 @@ public class ReservationFragment extends DialogFragment implements AdapterView.O
                 fromTimeEtxt.setText(timeFormatter.format(newTime.getTime()));
 
                 Toast.makeText(getActivity(), "You choose: " + hourOfDay + ":" + minute, Toast.LENGTH_LONG).show();
+
             }
 
         },newCalendar.get(java.util.Calendar.HOUR_OF_DAY), newCalendar.get(java.util.Calendar.MINUTE), false);

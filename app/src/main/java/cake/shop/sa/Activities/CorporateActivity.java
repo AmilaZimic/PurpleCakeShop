@@ -37,7 +37,7 @@ public class CorporateActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    // Adapter for the viewpager using FragmentPagerAdapter
+    /* Adapter for the viewpager using FragmentPagerAdapter */
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private final List<Fragment> mFragmentList = new ArrayList<>();

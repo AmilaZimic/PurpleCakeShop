@@ -6,11 +6,11 @@
     <string name="action_settings">Settings</string>
 
     <!-- Signup Activity -->
-    <string name="hint_email">Email</string>
+    <string name="hint_email">E-mail</string>
     <string name="hint_password">Password</string>
-    <string name="btn_sign_up">SIGN UP</string>
+    <string name="btn_sign_up">CREATE NEW ACCOUNT</string>
     <string name="btn_forgot_password">Forgot password?</string>
-    <string name="btn_link_to_signin">Already registered. Sign in to Purple Cake Shop!</string>
+    <string name="btn_link_to_signin">Already registered? Sign in to Purple Cake Shop!</string>
     <string name="toast_email">Please enter email address!</string>
     <string name="toast_password">Please enter password!</string>
     <string name="toast_too_short_password">"Password too short, please enter minimum 6 characters!</string>
@@ -24,6 +24,7 @@
     <!-- Signin Activity -->
 
     <!-- Reset Activity -->
+    <string name="btn_reset_password">Reset Password</string>
     <string name="forgot_password_msg">We just need your registered Email to sent you password reset instructions.</string>
     <string name="toast_reg_email">Please enter your registered email.</string>
     <string name="toast_reset_success">We have sent you instructions how to reset your password!</string>
@@ -31,14 +32,16 @@
     <!-- Reset Activity -->
 
     <!-- Profile Fragment -->
-    <string name="hint_new_email">New Email</string>
+    <string name="hint_new_email">New E-mail</string>
     <string name="hint_new_password">New Password</string>
-    <string name="btn_change">Change</string>
-    <string name="btn_send">Send</string>
+    <string name="btn_change_email">Change E-mail</string>
+    <string name="btn_change_password">Change Password</string>
+    <string name="btn_send">Send Reset E-mail</string>
     <string name="btn_remove">Remove</string>
     <string name="btn_sign_out">Sign Out</string>
     <string name="change_email">Change Email</string>
     <string name="change_password">Change Password</string>
+    <string name="show_details">Show details info about me</string>
     <string name="send_password_reset_email">Send Password Reset Email</string>
     <string name="remove_account">Remove account from the application</string>
     <string name="new_pass">New Password</string>
@@ -102,14 +105,64 @@
     <string name="ratebutton">Done</string>
     <!-- Rate Fragment -->
 
-    <!-- OSTATAK -->
-    <string name="email">Email</string>
-    <string name="title_activity_profile">Firebase</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="hint_name">Fullname</string>
-    <string name="title_activity_reset_password">ResetPasswordActivity</string>
-    <string name="btn_reset_password">Reset Password</string>
-    <!-- OSTATAK -->
+    <!-- Anniversary Fragment -->
+    <string name="anniversary_txt1">Love \nYou \n50KM</string>
+    <string name="anniversary_txt2">Double Cake \n50KM</string>
+    <string name="anniversary_txt3">Mocha Mousse \n60KM</string>
+    <string name="anniversary_txt4">Haupia \n65KM</string>
+    <string name="anniversary_txt5">King Arthur Cake \n70KM</string>
+    <!-- Anniversary Fragment -->
+
+    <!-- Birthday Fragment -->
+    <string name="birthday_txt1">Choco \nTres Leches \n50KM</string>
+    <string name="birthday_txt2">Michael’s \nFudge Cake \n50KM</string>
+    <string name="birthday_txt3">Three layers \n60KM</string>
+    <string name="birthday_txt4">Three Milks \n65KM</string>
+    <string name="birthday_txt5">German \nChoco Cake \n70KM</string>
+    <string name="birthday_txt6">Gold \nKing \n70KM</string>
+    <!-- Birthday Fragment -->
+
+    <!-- Corporate Fragment -->
+    <string name="corporate_txt1">Silver Muffin \n30KM</string>
+    <string name="corporate_txt2">Sweet Sticks \n30KM</string>
+    <!-- Corporate Fragment -->
+
+    <!-- Cupcakes Fragment -->
+    <string name="cupcakes_txt1">Strawberry Muffin \n30KM</string>
+    <string name="cupcakes_txt2">Rose Muffin \n30KM</string>
+    <string name="cupcakes_txt3">Tiramisu Muffin \n30KM</string>
+    <string name="cupcakes_txt4">Haupia \n30KM</string>
+    <string name="cupcakes_txt5">Chantilly Cake \n30KM</string>
+    <!-- Cupcakes Fragment -->
+
+    <!-- Wedding Fragment -->
+    <string name="wedding_txt1">Love You \n130KM</string>
+    <string name="wedding_txt2">Choco \nRum Cake \n140KM</string>
+    <string name="wedding_txt3">Four Seasons \n130KM</string>
+    <string name="wedding_txt4">White Angel \n150KM</string>
+    <string name="wedding_txt5">Red King \nCake \n150KM</string>
+    <!-- Wedding Fragment -->
+
+    <!-- Special Fragment -->
+    <string name="special_txt1">Mickey Mouse \n100KM</string>
+    <string name="special_txt2">Black \nForest Cake \n100KM</string>
+    <string name="special_txt3">Minions Cakes \n110KM</string>
+    <string name="special_txt4">Mac \nCosmetics Cake \n120KM</string>
+    <string name="special_txt5">Photo \nCamera Cake \n120KM</string>
+    <!-- Special Fragment -->
+
+    <!-- Order Fragment -->
+    <string name="order_txt1">Place an order and enjoy in sweets!</string>
+    <string name="order_txt2">Name</string>
+    <string name="order_txt3">Lastname</string>
+    <string name="order_txt4">E-mail</string>
+    <string name="order_txt5">Delivery Address</string>
+    <string name="order_txt6">Cake Name</string>
+    <string name="order_txt7">Add Note</string>
+    <string name="orderbutton">Order</string>
+    <!-- Order Fragment -->
+
+    <string name="order">Order</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

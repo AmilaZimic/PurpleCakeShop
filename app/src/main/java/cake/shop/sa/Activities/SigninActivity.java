@@ -43,7 +43,7 @@ public class SigninActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
-        //Get Firebase auth instance
+        /* Get Firebase auth instance */
         auth = FirebaseAuth.getInstance();
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class SigninActivity extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                //authenticate user
+                /* Authenticate user */
                 auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SigninActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override

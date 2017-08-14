@@ -6,20 +6,9 @@
     android:background="@color/colorPrimaryDark"
     tools:context="cake.shop.sa.Fragments.ShopsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/shops_title"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        />
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"

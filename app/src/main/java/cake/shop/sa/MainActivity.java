@@ -1,5 +1,6 @@
 package cake.shop.sa;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cake.shop.sa.Activities.SigninActivity;
 import cake.shop.sa.Fragments.AboutFragment;
 import cake.shop.sa.Fragments.HomeFragment;
 import cake.shop.sa.Fragments.ProfileFragment;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Home fragment call*/
+        /* Home Fragment call */
 
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
@@ -106,36 +108,41 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             AboutFragment aboutFragment = new AboutFragment();
-            fragmentTransaction.replace(R.id.fragment_container, aboutFragment);
+            fragmentTransaction.replace(R.id.fragment_container, aboutFragment).addToBackStack(null);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_shops) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             ShopsFragment shopsFragment = new ShopsFragment();
-            fragmentTransaction.replace(R.id.fragment_container, shopsFragment);
+            fragmentTransaction.replace(R.id.fragment_container, shopsFragment).addToBackStack(null);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_reservation) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             ReservationFragment reservationFragment = new ReservationFragment();
-            fragmentTransaction.replace(R.id.fragment_container, reservationFragment);
+            fragmentTransaction.replace(R.id.fragment_container, reservationFragment).addToBackStack(null);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_rate) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             RateFragment rateFragment = new RateFragment();
-            fragmentTransaction.replace(R.id.fragment_container, rateFragment);
+            fragmentTransaction.replace(R.id.fragment_container, rateFragment).addToBackStack(null);
             fragmentTransaction.commit();
 
-        }  else if (id == R.id.nav_profile) {
+        } else if (id == R.id.nav_account) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             ProfileFragment profileFragment = new ProfileFragment();
-            fragmentTransaction.replace(R.id.fragment_container, profileFragment);
+            fragmentTransaction.replace(R.id.fragment_container, profileFragment).addToBackStack(null);
             fragmentTransaction.commit();
+
+        } else if (id == R.id.nav_sign_out) {
+            Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

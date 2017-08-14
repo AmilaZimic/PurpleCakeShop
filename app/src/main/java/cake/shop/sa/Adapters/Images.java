@@ -8,19 +8,18 @@ import java.io.Serializable;
 
 public class Images implements Serializable {
 
-
     public String name_bih;
     public String name_eng;
-    public  String image1;
+    public String image1;
     public String Description_eng;
     public String Description_bih;
 
     public Images(String imageUrl, String name_bih, String name_eng, String Description_eng, String Description_bih ){
-        this.image1=imageUrl;
-        this.name_bih=name_bih;
-        this.name_eng=name_eng;
-        this.Description_bih=Description_bih;
-        this.Description_eng=Description_eng;
+        this.image1 = imageUrl;
+        this.name_bih = name_bih;
+        this.name_eng = name_eng;
+        this.Description_bih = Description_bih;
+        this.Description_eng = Description_eng;
     }
 
     public Images() {

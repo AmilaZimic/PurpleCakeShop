@@ -5,21 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Fragments.ProfileFragment">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            app:layout_scrollFlags="scroll|enterAlways" />
-    </android.support.design.widget.AppBarLayout>
+    tools:context=".Fragments.ProfileFragment"
+    android:background="@drawable/im_home">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,32 +63,32 @@
         <Button
             android:id="@+id/changeEmail"
             style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/btn_change"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_change_email"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/changePassword"
             style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/btn_change"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_change_password"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/send"
             style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimary"
             android:text="@string/btn_send"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
@@ -115,7 +102,7 @@
         <Button
             android:id="@+id/remove"
             style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimaryDark"

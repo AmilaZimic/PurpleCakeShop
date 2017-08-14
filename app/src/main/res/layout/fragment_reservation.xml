@@ -4,6 +4,14 @@
     tools:context="cake.shop.sa.Fragments.ReservationFragment"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:textSize="20dp" />
     
     <ScrollView
         android:layout_width="fill_parent"
@@ -50,14 +58,16 @@
                     android:text="@string/reservation_txt2"
                     android:textColor="@color/colorPrimaryDark" />
 
+                <!-- Name -->
                 <EditText
+                    android:id="@+id/reservation_etxt1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/reservation_etxt1"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
                     android:background="@drawable/edittext_rounded"
-                    android:textColor="#000000"
                     android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
                     android:padding="5dp"
                     android:layout_weight=".75" />
             </LinearLayout>
@@ -81,14 +91,16 @@
                     android:text="@string/reservation_txt3"
                     android:textColor="@color/colorPrimaryDark"  />
 
+                <!-- Lastname -->
                 <EditText
+                    android:id="@+id/reservation_etxt2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/reservation_etxt2"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
                     android:background="@drawable/edittext_rounded"
-                    android:textColor="#000000"
                     android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
                     android:padding="5dp"
                     android:layout_weight=".75" />
             </LinearLayout>
@@ -112,14 +124,16 @@
                     android:text="@string/reservation_txt4"
                     android:textColor="@color/colorPrimaryDark"  />
 
+                <!-- Email -->
                 <EditText
+                    android:id="@+id/reservation_etxt3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/reservation_etxt3"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textEmailAddress"
                     android:background="@drawable/edittext_rounded"
-                    android:textColor="#000000"
                     android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
                     android:padding="5dp"
                     android:layout_weight=".75" />
             </LinearLayout>
@@ -143,14 +157,16 @@
                 android:text="@string/reservation_txt5"
                 android:textColor="@color/colorPrimaryDark"  />
 
+            <!-- Phone -->
             <EditText
+                android:id="@+id/reservation_etxt4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/reservation_etxt4"
                 android:layout_marginLeft="10dp"
+                android:inputType="phone"
                 android:background="@drawable/edittext_rounded"
-                android:textColor="#000000"
                 android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textColor="#000000"
                 android:padding="5dp"
                 android:layout_weight=".75" />
             </LinearLayout>
@@ -174,14 +190,15 @@
                     android:text="@string/reservation_txt6"
                     android:textColor="@color/colorPrimaryDark" />
 
+                <!-- Date -->
                 <EditText
+                    android:id="@+id/reservation_etxt6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/reservation_etxt6"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edittext_rounded"
-                    android:textColor="#000000"
                     android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
                     android:focusable="false"
                     android:padding="5dp"
                     android:layout_weight=".75" />
@@ -206,14 +223,15 @@
                     android:text="@string/reservation_txt7"
                     android:textColor="@color/colorPrimaryDark" />
 
+                <!-- Time -->
                 <EditText
+                    android:id="@+id/reservation_etxt7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/reservation_etxt7"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edittext_rounded"
-                    android:textColor="#000000"
                     android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
                     android:focusable="false"
                     android:padding="5dp"
                     android:layout_weight=".75" />
@@ -240,12 +258,13 @@
                     android:text="@string/reservation_txt8"
                     android:textColor="@color/colorPrimaryDark"  />
 
+                <!-- Location -->
                 <Spinner
+                    android:id="@+id/spinner1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_gravity="center_vertical"
-                    android:id="@+id/spinner1"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edittext_rounded"
                     android:textColor="#000000"
@@ -277,12 +296,13 @@
                     android:text="@string/reservation_txt9"
                     android:textColor="@color/colorPrimaryDark"  />
 
+                <!-- Seats -->
                 <Spinner
+                    android:id="@+id/spinner2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_gravity="center_vertical"
-                    android:id="@+id/spinner2"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/edittext_rounded"
                     android:textColor="#000000"

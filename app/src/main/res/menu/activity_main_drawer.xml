@@ -3,10 +3,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_profile"
-            android:title="Your Profile" />
-        <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
@@ -16,21 +12,24 @@
             android:title="About" />
         <item
             android:id="@+id/nav_shops"
-            android:icon="@drawable/ic_my_location"
+            android:icon="@drawable/ic_location"
             android:title="Shops" />
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/ic_reservation"
+            android:title="Make Reservation" />
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_rate"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_logout"
+            android:title="Sign Out" />
     </group>
-
-    <item android:title="Like the Cake Shop?">
-        <menu>
-            <item
-                android:id="@+id/nav_reservation"
-                android:icon="@drawable/ic_reservation"
-                android:title="Make Reservation" />
-            <item
-                android:id="@+id/nav_rate"
-                android:icon="@drawable/ic_rate"
-                android:title="Rate Us" />
-        </menu>
-    </item>
 
 </menu>

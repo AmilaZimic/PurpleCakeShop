@@ -1,0 +1,260 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cake.shop.sa.Activities.OrderActivity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:textSize="20dp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDark"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/order_title"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="@string/order_txt1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_selector1"/>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_name"
+                android:layout_below="@+id/order_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt2"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <!-- Name -->
+                <EditText
+                    android:id="@+id/order_etxt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_lastname"
+                android:layout_below="@+id/order_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt3"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <!-- Lastname -->
+                <EditText
+                    android:id="@+id/order_etxt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_email"
+                android:layout_below="@+id/order_lastname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt4"
+                    android:textColor="@color/colorPrimaryDark"  />
+
+                <!-- Email -->
+                <EditText
+                    android:id="@+id/order_etxt3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_address"
+                android:layout_below="@+id/order_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt5"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <!-- Address -->
+                <EditText
+                    android:id="@+id/order_etxt4"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_cake_name"
+                android:layout_below="@+id/order_address"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt6"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <!-- CakeName -->
+                <EditText
+                    android:id="@+id/order_etxt6"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_note"
+                android:layout_below="@+id/order_cake_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/button_selector1"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".25"
+                    android:text="@string/order_txt7"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <!-- Note -->
+                <EditText
+                    android:id="@+id/order_etxt7"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edittext_rounded"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="#000000"
+                    android:padding="5dp"
+                    android:layout_weight=".75" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/order_done"
+                android:layout_below="@+id/order_note"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="@string/orderbutton"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_selector1"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
